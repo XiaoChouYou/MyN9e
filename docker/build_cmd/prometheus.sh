@@ -7,8 +7,15 @@ if [  ! -d ${PROJECTHOME}/prometheus ]
 then
   mkdir -p ${PROJECTHOME}/prometheus
 fi
-docker cp prometheus-demo:/prometheus/        ${PROJECTHOME}/prometheus/data/
-docker cp prometheus-demo:/etc/prometheus/    ${PROJECTHOME}/prometheus/etc/
+if [  ! -d ${PROJECTHOME}/prometheus/data/ ]
+then
+  docker cp prometheus-demo:/prometheus/        ${PROJECTHOME}/prometheus/data/
+fi
+
+if [  ! -d ${PROJECTHOME}/prometheus/etc/ ]
+then
+  docker cp prometheus-demo:/etc/prometheus/    ${PROJECTHOME}/prometheus/etc/
+fi
 
 chmod -R 777  ${PROJECTHOME}/prometheus/data ${PROJECTHOME}/prometheus/etc
 docker stop prometheus-demo
