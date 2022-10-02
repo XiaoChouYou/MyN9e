@@ -44,8 +44,6 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
     ports:
       - 5432:5432
-      - 9201:9201
-      - 9202:9202
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
@@ -61,12 +59,15 @@ services:
     restart: always
     network_mode: container:n9e-timescaledb
     environment:
-      - PROMSCALE_DB_HOST=127.0.0.1
+      - PROMSCALE_DB_HOST=${PROMSCALE_DB_HOST}
       - PROMSCALE_DB_PORT=${PROMSCALE_DB_PORT}
-      - PROMSCALE_DB_SSL_MODE=${allow}
+      - PROMSCALE_DB_SSL_MODE=allow
       - PROMSCALE_DB_NAME=${PROMSCALE_DB_NAME}
       - PROMSCALE_DB_PASSWORD=${PROMSCALE_DB_PASSWORD}
       - WAIT_HOSTS=dns-server:8080,timescaledb:5432
+    ports:
+      - 9201:9201
+      - 9202:9202
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
