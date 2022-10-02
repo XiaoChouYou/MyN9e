@@ -29,7 +29,7 @@ strict-order
 #我的DNS服务器
 address=/MyDns/${DNS_SERVICE}
 #我的postgres服务器
-address=/MyPostgres/${DNS_SERVICE}
+address=/MyPostgres/${POSTGRES_SERVICE}
 
 EOF
 
