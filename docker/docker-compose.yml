@@ -57,11 +57,9 @@ services:
     image: timescale/promscale:0.14
     container_name: n9e-promscale
     restart: always
-    networks:
-      net_n9e:
-        ipv4_address: ${PROMSCALE_SERVICE}
+    network_mode: container:n9e-timescaledb
     environment:
-      - PROMSCALE_DB_HOST=${PROMSCALE_DB_HOST}
+      - PROMSCALE_DB_HOST=127.0.0.1
       - PROMSCALE_DB_PORT=${PROMSCALE_DB_PORT}
       - PROMSCALE_DB_SSL_MODE=${allow}
       - PROMSCALE_DB_NAME=${PROMSCALE_DB_NAME}
