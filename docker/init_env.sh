@@ -18,6 +18,9 @@ export DNSUSER=admin
 export DNSPASSWD=123123
 sh  "${WORKHOME}"/build_cmd/dns.sh
 
+# POSTGRES数据库
+export POSTGRESPASSWD=123123
+
 
 
 #NGINX配置
