@@ -1,0 +1,29 @@
+
+
+version: 3.0
+
+networks:
+  net_n9e:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.1.1.0/24
+
+services:
+  dns-server:
+    container_name: n9e-dns
+    image: jpillora/dnsmasq
+    restart: always
+    networks:
+      net_n9e:
+        - ipv4_address: 172.1.1.250
+    environment:
+      - TZ=Asia/Shanghai
+      - HTTP_USER=admin
+      - HTTP_PASS=Lly3c_123
+    ports:
+      - 53:53/udp
+      - 8080:8080
+    volumes:
+      - ${WORKHOME}/dns/dnsmasq.conf:/etc/dnsmasq.conf:rw
+      - ${WORKHOME}/dns/resoolv.conf:/etc/resolv.conf:ro
