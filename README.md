@@ -21,3 +21,12 @@ RUN (chown -R postgres:postgres /var/lib/postgresql )
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["postgres"]
 ```
+
+# docker hub 登录
+```shell
+docker login
+
+
+docker push new-repo:tagname
+
+```
