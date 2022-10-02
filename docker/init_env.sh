@@ -16,6 +16,6 @@ export DNSSERVICE=172.0.0.250
 #
 
 # DNS配置文件初始化
-sh -x "${WORKHOME}"/build_cmd/dns.sh
+sh  "${WORKHOME}"/build_cmd/dns.sh
 
 
