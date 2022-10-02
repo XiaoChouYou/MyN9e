@@ -13,7 +13,10 @@ fi
 export SUBNETWORK=172.0.0.0/24
 # DNS服务器IP
 export DNSSERVICE=172.0.0.250
-#
+# DNS用户名
+export DNSUSER=admin
+# DNS密码
+export DNSPASSWD=123123
 
 # DNS配置文件初始化
 sh  "${WORKHOME}"/build_cmd/dns.sh

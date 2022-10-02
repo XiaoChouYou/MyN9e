@@ -19,8 +19,8 @@ services:
         ipv4_address: 172.1.1.250
     environment:
       - TZ=Asia/Shanghai
-      - HTTP_USER=admin
-      - HTTP_PASS=Lly3c_123
+      - HTTP_USER=${DNSUSER}
+      - HTTP_PASS=${DNSPASSWD}
     ports:
       - 53:53/udp
       - 8080:8080
