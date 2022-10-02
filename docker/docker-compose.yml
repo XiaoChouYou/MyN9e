@@ -61,7 +61,7 @@ services:
       net_n9e:
         ipv4_address: ${PROMSCALE_SERVICE}
     environment:
-      - PROMSCALE_DB_HOST=${PROMSCALE_SERVICE}
+      - PROMSCALE_DB_HOST=${PROMSCALE_DB_HOST}
       - PROMSCALE_DB_PORT=${PROMSCALE_DB_PORT}
       - PROMSCALE_DB_SSL_MODE=${allow}
       - PROMSCALE_DB_NAME=${PROMSCALE_DB_NAME}
