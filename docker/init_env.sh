@@ -2,7 +2,7 @@
 
 if  [ X"${WORKHOME}" = X ]
 then
-  WORKHOME=$(pwd)
+  WORKHOME=$(pwd)/project
   export WORKHOME
 fi
 
