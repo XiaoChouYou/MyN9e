@@ -25,5 +25,5 @@ services:
       - 53:53/udp
       - 8080:8080
     volumes:
-      - ${WORKHOME}/dns/dnsmasq.conf:/etc/dnsmasq.conf:rw
-      - ${WORKHOME}/dns/resoolv.conf:/etc/resolv.conf:ro
+      - ${PROJECTHOME}/dns/dnsmasq.conf:/etc/dnsmasq.conf:rw
+      - ${PROJECTHOME}/dns/resoolv.conf:/etc/resolv.conf:ro
