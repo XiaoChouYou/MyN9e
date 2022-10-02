@@ -30,27 +30,36 @@ services:
       - ${PROJECTHOME}/dns/dnsmasq.conf:/etc/dnsmasq.conf:rw
 
 
-
-  nginx:
-    container_name: n9e-nginx
-    image: nginx
+  timescaledb:
+    image: timescaledev/promscale-extension:0.6.0-ts2.7.2-pg14
+    container_name: n9e-timescaledb
     restart: always
-    networks:
-      net_n9e:
-        ipv4_address: ${NGINXSERVICE}
     environment:
-      - NGINX_PORT=10080
-    ports:
-      - 10080:10080
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
-      - ${PROJECTHOME}/nginx/etc:/etc/nginx:rw
-      - ${PROJECTHOME}/nginx/html:/usr/share/nginx/html:rw
-      - ${PROJECTHOME}/nginx/logs:/var/log/nginx:rw
-    mem_limit: 512m
-    depends_on:
-      - dns-server
+      - csynchronous_commit=off
+      - POSTGRES_PASSWORD=${POSTGRESPASSWD}
 
 
 
+
+
+#  nginx:
+#    container_name: n9e-nginx
+#    image: nginx
+#    restart: always
+#    networks:
+#      net_n9e:
+#        ipv4_address: ${NGINXSERVICE}
+#    environment:
+#      - NGINX_PORT=10080
+#    ports:
+#      - 10080:10080
+#    volumes:
+#      - /etc/localtime:/etc/localtime:ro
+#      - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
+#      - ${PROJECTHOME}/nginx/etc:/etc/nginx:rw
+#      - ${PROJECTHOME}/nginx/html:/usr/share/nginx/html:rw
+#      - ${PROJECTHOME}/nginx/logs:/var/log/nginx:rw
+#    mem_limit: 512m
+#    depends_on:
+#      - dns-server
+#
