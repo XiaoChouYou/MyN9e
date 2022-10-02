@@ -12,7 +12,7 @@ networks:
 services:
   dns-server:
     container_name: n9e-dns
-    image: jpillora/dnsmasq
+    image: 'jpillora/dnsmasq'
     restart: always
     networks:
       net_n9e:
