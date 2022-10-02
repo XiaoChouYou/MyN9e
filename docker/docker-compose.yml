@@ -79,6 +79,8 @@ services:
       - timescaledb
 
 
+  prometheus:
+    image: prom/prometheus:v2.33.4
 
 
 
