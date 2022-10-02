@@ -93,9 +93,8 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
-      - ${PROJECTHOME}/prometheus/etc:/etc/prometheus:rw
-      - ${PROJECTHOME}/prometheus/share:/usr/share/prometheus:rw
       - ${PROJECTHOME}/prometheus/data:/prometheus:rw
+      - ${PROJECTHOME}/prometheus/etc:/etc/prometheus:rw
     command:
       - '--config.file=/data/prometheus/etc/prometheus.yml'
       - '--storage.tsdb.path=/data/prometheus/data'
