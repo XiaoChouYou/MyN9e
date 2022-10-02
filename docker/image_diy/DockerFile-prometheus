@@ -2,13 +2,11 @@ FROM prom/prometheus:v2.33.4
 # 创建程序账号
 ENV PROC_UID  1000
 ENV PROC_GID  1000
-
 USER root
-COPY start.sh /
-RUN ( chmod 777 /start.sh )
+
+RUN (chmod -R 777 /etc/prometheus /usr/share/prometheus /prometheus )
 
 USER nobody
-ENTRYPOINT ["/start.sh"]
-CMD ["--config.file=/data/prometheus/etc/prometheus.yml" "--storage.tsdb.path=/data/prometheus/prometheus" "--web.console.libraries=/data/prometheus/share/console_libraries" "--web.console.templates=/data/prometheus/share/consoles"]
+ENTRYPOINT ["/bin/prometheus"]
+CMD ["--config.file=/etc/prometheus/prometheus.yml" "--storage.tsdb.path=/prometheus" "--web.console.libraries=/usr/share/prometheus/console_libraries" "--web.console.templates=/usr/share/prometheus/consoles"]
 
-VOLUME [ "/data" ]
