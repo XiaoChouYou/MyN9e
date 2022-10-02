@@ -19,8 +19,8 @@ services:
         ipv4_address: ${DNSSERVICE}
     environment:
       - TZ=Asia/Shanghai
-      - HTTP_USER=${DNSUSER}
-      - HTTP_PASS=${DNSPASSWD}
+      - HTTP_USER=${DNS_USER}
+      - HTTP_PASS=${DNS_PASSWD}
     ports:
       - 53:53/udp
       - 8080:8080
@@ -34,11 +34,14 @@ services:
     image: xiaochouyou/promscale-extension:0.6.0-ts2.7.2-pg14
     container_name: n9e-timescaledb
     restart: always
+    networks:
+      net_n9e:
+        ipv4_address: ${POSTGRES_SERVICE}
     environment:
       - csynchronous_commit=off
-      - POSTGRES_PASSWORD=${POSTGRESPASSWD}
-      - PROC_GID=${PROC_GID}
-      - PROC_UID=${PROC_UID}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWD}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_DB=${POSTGRES_DB}
     ports:
       - 5432:5432
     volumes:
@@ -48,6 +51,34 @@ services:
     mem_limit: 512m
     depends_on:
       - dns-server
+
+
+  promscale:
+    image: timescale/promscale:0.14
+    container_name: n9e-promscale
+    restart: always
+    networks:
+      net_n9e:
+        ipv4_address: ${PROMSCALE_SERVICE}
+    environment:
+      - PROMSCALE_DB_HOST=${PROMSCALE_SERVICE}
+      - PROMSCALE_DB_PORT=${PROMSCALE_DB_PORT}
+      - PROMSCALE_DB_SSL_MODE=${allow}
+      - PROMSCALE_DB_NAME=${PROMSCALE_DB_NAME}
+      - PROMSCALE_DB_PASSWORD=${PROMSCALE_DB_PASSWORD}
+      - WAIT_HOSTS=timescaledb:5432
+    ports:
+      - 9201:9201
+      - 9202:9202
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
+    mem_limit: 512m
+    depends_on:
+      - dns-server
+      - timescaledb
+
+
 
 
 
