@@ -20,7 +20,8 @@ sh  "${WORKHOME}"/build_cmd/dns.sh
 
 # POSTGRES数据库
 export POSTGRESPASSWD=123123
-
+export PROC_GID=5000
+export PROC_UID=5000
 
 
 #NGINX配置
@@ -28,3 +29,4 @@ export NGINXSERVICE=172.0.0.100
 export NGINXHTTPPORT=10080
 export NGINXHTTPsPORT=10443
 sh  "${WORKHOME}"/build_cmd/nginx.sh
+

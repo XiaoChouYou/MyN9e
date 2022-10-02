@@ -31,12 +31,14 @@ services:
 
 
   timescaledb:
-    image: timescaledev/promscale-extension:0.6.0-ts2.7.2-pg14
+    image: xiaochouyou/promscale-extension:0.6.0-ts2.7.2-pg14
     container_name: n9e-timescaledb
     restart: always
     environment:
       - csynchronous_commit=off
       - POSTGRES_PASSWORD=${POSTGRESPASSWD}
+      - PROC_GID=${PROC_GID}
+      - PROC_UID=${PROC_UID}
     ports:
       - 5432:5432
     volumes:
