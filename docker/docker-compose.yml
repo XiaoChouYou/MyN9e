@@ -16,7 +16,7 @@ services:
     restart: always
     networks:
       net_n9e:
-        ipv4_address: 172.1.1.250
+        ipv4_address: ${DNSSERVICE}
     environment:
       - TZ=Asia/Shanghai
       - HTTP_USER=${DNSUSER}
@@ -25,5 +25,32 @@ services:
       - 53:53/udp
       - 8080:8080
     volumes:
-      - ${PROJECTHOME}/dns/dnsmasq.conf:/etc/dnsmasq.conf:rw
+      - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
+      - ${PROJECTHOME}/dns/dnsmasq.conf:/etc/dnsmasq.conf:rw
+
+
+
+  nginx:
+    container_name: n9e-nginx
+    image: nginx
+    restart: always
+    networks:
+      net_n9e:
+        ipv4_address: ${NGINXSERVICE}
+    environment:
+      - NGINX_PORT=10080
+    ports:
+      - 10080:10080
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
+      - ${PROJECTHOME}/nginx/etc:/etc/nginx:rw
+      - ${PROJECTHOME}/nginx/html:/usr/share/nginx/html:rw
+      - ${PROJECTHOME}/nginx/logs:/var/log/nginx:rw
+    mem_limit: 512m
+    depends_on:
+      - dns-server
+
+
+

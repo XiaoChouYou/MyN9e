@@ -19,7 +19,9 @@ export DNSPASSWD=123123
 sh  "${WORKHOME}"/build_cmd/dns.sh
 
 
+
 #NGINX配置
+export NGINXSERVICE=172.0.0.100
 export NGINXHTTPPORT=10080
 export NGINXHTTPsPORT=10443
 sh  "${WORKHOME}"/build_cmd/nginx.sh
