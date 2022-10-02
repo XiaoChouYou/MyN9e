@@ -20,8 +20,8 @@ sh  "${WORKHOME}"/build_cmd/dns.sh
 
 # POSTGRES数据库
 export POSTGRESPASSWD=123123
-export PROC_GID=5000
-export PROC_UID=5000
+export PROC_GID=1000
+export PROC_UID=1000
 sh  "${WORKHOME}"/build_cmd/timescaledb.sh
 
 
