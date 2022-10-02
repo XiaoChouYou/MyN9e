@@ -26,4 +26,4 @@ services:
       - 8080:8080
     volumes:
       - ${PROJECTHOME}/dns/dnsmasq.conf:/etc/dnsmasq.conf:rw
-      - ${PROJECTHOME}/dns/resoolv.conf:/etc/resolv.conf:ro
+      - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
