@@ -5,7 +5,7 @@ ENV PROC_GID  1000
 
 USER root
 COPY start.sh /
-
+RUN ( chmod 777 /start.sh )
 
 USER nobody
 ENTRYPOINT ["/start.sh"]
