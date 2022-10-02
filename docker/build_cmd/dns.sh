@@ -10,10 +10,6 @@ then
   rm  "${PROJECTHOME}"/dns/resolv.conf
 fi
 
-# 初始化dnsmasq.conf
-echo >"${PROJECTHOME}"/dns/dnsmasq.conf EOF
-
-EOF
 
 # 初始化dnsmasq.conf
 cat  >  "${PROJECTHOME}"/dns/dnsmasq.conf <<EOF
