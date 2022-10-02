@@ -37,6 +37,9 @@ export PROMSCALE_DB_NAME=${POSTGRES_DB}
 export PROMSCALE_DB_PASSWORD=${POSTGRES_PASSWD}
 
 
+# prometheus 配置初始化
+sh  "${WORKHOME}"/build_cmd/prometheus.sh
+
 
 #NGINX配置
 export NGINX_SERVICE=172.0.0.100

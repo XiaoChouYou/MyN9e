@@ -80,7 +80,7 @@ services:
 
 
   prometheus:
-    image: xiaochouyou/prometheus:v2.33.4
+    image: prom/prometheus:v2.33.4
     container_name: n9e-prometheus
     restart: always
     networks:
