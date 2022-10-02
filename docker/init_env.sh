@@ -2,9 +2,12 @@
 
 if  [ X"${WORKHOME}" = X ]
 then
-  WORKHOME=$(pwd)/project
+  WORKHOME=$(pwd)
   export WORKHOME
+  PROJECTHOME=${WORKHOME}/project
+  export PROJECTHOME
 fi
+
 
 # docker环境子网
 export SUBNETWORK=172.0.0.0/24
@@ -13,6 +16,6 @@ export DNSSERVICE=172.0.0.250
 #
 
 # DNS配置文件初始化
-"${WORKHOME}"/init_cmd/init_dns.sh
+"${WORKHOME}"/build_cmd/dns.sh
 
 
