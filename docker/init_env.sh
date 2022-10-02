@@ -22,6 +22,7 @@ sh  "${WORKHOME}"/build_cmd/dns.sh
 export POSTGRESPASSWD=123123
 export PROC_GID=5000
 export PROC_UID=5000
+sh  "${WORKHOME}"/build_cmd/timescaledb.sh
 
 
 #NGINX配置
