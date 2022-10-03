@@ -34,7 +34,7 @@ ForceUseServerTS = true
 # log write dir
 Dir = "logs"
 # log level: DEBUG INFO WARNING ERROR
-Level = "INFO"
+Level = "DEBUG"
 # stdout, stderr, file
 Output = "stdout"
 # # rotate by time
