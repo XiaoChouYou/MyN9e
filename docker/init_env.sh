@@ -20,7 +20,7 @@ sh  "${WORKHOME}"/build_cmd/dns.sh
 
 # timescaledb数据库
 export POSTGRES_SERVICE=172.0.0.2
-export POSTGRES_PASSWD=postgres
+export POSTGRES_PASSWD=123123
 export POSTGRES_USER=postgres
 export POSTGRES_DB=postgres
 export PROC_GID=1000
