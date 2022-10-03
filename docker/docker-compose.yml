@@ -194,9 +194,9 @@ services:
     environment:
       GIN_MODE: release
       TZ: Asia/Shanghai
-      WAIT_HOSTS: timescaledb:5432, redis:6379
+      WAIT_HOSTS: mysql:3306, redis:6379
     depends_on:
-      - timescaledb
+      - mysql
       - redis
       - prometheus
       - ibex
