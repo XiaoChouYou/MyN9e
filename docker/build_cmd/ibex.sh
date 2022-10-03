@@ -86,13 +86,13 @@ TablePrefix = ""
 
 [MySQL]
 # mysql address host:port
-Address = "mysql:3306"
+Address = "${IBEX_MYSQL_HOST}:${IBEX_MYSQL_PORT}"
 # mysql username
-User = "root"
+User = "${ibex}"
 # mysql password
-Password = "1234"
+Password = "${IBEX_MYSQL_PASSWORD}"
 # database name
-DBName = "ibex"
+DBName = "${IBEX_MYSQL_NAME}"
 # connection params
 Parameters = "charset=utf8mb4&parseTime=True&loc=Local&allowNativePasswords=true"
 
