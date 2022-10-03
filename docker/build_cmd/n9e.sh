@@ -136,7 +136,7 @@ Timeout = 3000
 # address, ip:port
 Address = "${N9E_REDIS_SERVICE}:${N9E_REDIS_PORT}"
 # requirepass
-Password = "${REDIS_PASSWORD}"
+Password = "${N9E_REDIS_PASSWORD}"
 # # db
 # DB = 0
 
