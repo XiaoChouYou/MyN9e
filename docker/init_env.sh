@@ -30,11 +30,13 @@ sh  "${WORKHOME}"/build_cmd/timescaledb.sh
 
 # PROMSCALE 数据库
 export PROMSCALE_SERVICE=172.0.0.2
-export PROMSCALE_DB_HOST=${POSTGRES_SERVICE}
+export PROMSCALE_DB_HOST=POSTGRES_SERVICE
 export PROMSCALE_DB_PORT=5432
 export PROMSCALE_DB_SSL_MODE=allow
-export PROMSCALE_DB_NAME=${POSTGRES_DB}
-export PROMSCALE_DB_PASSWORD=${POSTGRES_PASSWD}
+export PROMSCALE_DB_NAME=promscale
+export PROMSCALE_DB_USER=promscale
+export PROMSCALE_DB_PASSWORD=promscale
+
 
 
 # prometheus 配置初始化
