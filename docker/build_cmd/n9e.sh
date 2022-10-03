@@ -34,7 +34,7 @@ ForceUseServerTS = true
 # log write dir
 Dir = "logs"
 # log level: DEBUG INFO WARNING ERROR
-Level = "DEBUG"
+Level = "INFO"
 # stdout, stderr, file
 Output = "stdout"
 # # rotate by time
@@ -143,8 +143,8 @@ Password = "${N9E_REDIS_PASSWORD}"
 [DB]
 # postgres: host=%s port=%s user=%s dbname=%s password=%s sslmode=%s
 DSN="${N9E_MYSQL_USER}:${N9E_MYSQL_PASSWORD}@tcp(${N9E_MYSQL_HOST}:${N9E_MYSQL_PORT})/${N9E_MYSQL_NAME}?charset=utf8mb4&parseTime=True&loc=Local&allowNativePasswords=true"
-# enable debug mode or not false
-Debug = true
+# enable true debug mode or not false
+Debug = false
 # mysql postgres
 DBType = "${N9E_DBType}"
 # unit: s
