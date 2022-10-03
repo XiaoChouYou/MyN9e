@@ -76,6 +76,8 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
+    command:
+      - 'promscale'
     mem_limit: 512m
     depends_on:
       - dns-server
