@@ -51,7 +51,7 @@ sh  "${WORKHOME}"/build_cmd/redis.sh
 # mysql 配置初始化
 export MYSQL_SERVICE=172.0.0.4
 export MYSQL_ROOT_PASSWORD=mysql
-
+sh  "${WORKHOME}"/build_cmd/mysql.sh
 
 
 # Ibex
