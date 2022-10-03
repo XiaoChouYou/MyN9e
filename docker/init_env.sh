@@ -89,7 +89,7 @@ export N9E_PGDB_USER=n9e
 export N9E_PGDB_PASSWORD=n9e
 export N9E_PGDB_NAME=n9e
 export N9E_PGDB_SSL_MODE=allow
-# sh  "${WORKHOME}"/build_cmd/n9e.sh
+sh  "${WORKHOME}"/build_cmd/n9e.sh
 
 
 
