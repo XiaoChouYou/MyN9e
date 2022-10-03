@@ -6,7 +6,7 @@ then
   mkdir -p ${PROJECTHOME}/n9e/etc/
 fi
 
-
+cp -r ${WORKHOME}/build_cmd/n9e_etc/*   ${PROJECTHOME}/n9e/etc/
 chmod -R 777  ${PROJECTHOME}/n9e/etc/
 
 cat  >  "${PROJECTHOME}"/n9e/etc/server.conf  <<EOF
