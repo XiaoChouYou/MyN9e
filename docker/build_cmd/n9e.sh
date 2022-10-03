@@ -150,7 +150,7 @@ dbname="${N9E_PGDB_NAME}"
 password="${N9E_PGDB_PASSWORD}"
 sslmode="${N9E_PGDB_SSL_MODE}"
 # enable debug mode or not false
-Debug = enable
+Debug = true
 # mysql postgres
 DBType = "${N9E_DBType}"
 # unit: s
