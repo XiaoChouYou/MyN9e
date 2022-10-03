@@ -130,6 +130,35 @@ services:
 
 
 
+  n9eserver:
+    image: flashcatcloud/nightingale:5.12.1
+    container_name: n9e-nserver
+    restart: always
+    networks:
+      net_n9e:
+        ipv4_address: ${NSERVER1_SERVICE}
+    ports:
+      - "19000:19000"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
+      - ${PROJECTHOME}/n9e1/etc:/app/etc
+    environment:
+      GIN_MODE: release
+      TZ: Asia/Shanghai
+      WAIT_HOSTS: timescaledb:5432, redis:6379
+    depends_on:
+      - mysql
+      - redis
+      - prometheus
+      - ibex
+    links:
+      - mysql:mysql
+      - redis:redis
+      - prometheus:prometheus
+      - ibex:ibex
+    command: >
+      sh -c "/wait && /app/n9e server"
 
 
 #  nginx:

@@ -1,5 +1,5 @@
 
-# 创建DNS服务相关配置文件
+# 创建redis服务相关配置文件
 mkdir -p "${PROJECTHOME}"/redis/data
 if [ -f "${PROJECTHOME}"/redis/data/redis.conf ]
 then
