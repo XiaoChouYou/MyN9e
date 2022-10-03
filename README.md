@@ -26,11 +26,12 @@ CMD ["postgres"]
 ```shell
 docker login
 docker push new-repo:tagname
-
 ```
 
 # 提前下载镜像,并提前准备一些docker本地持久化配置文件
 ```shell
+git clone https://github.com/XiaoChouYou/MyN9e.git
+cd MyN9e
 . ./init_env.sh
-
+docker-compose up -d
 ```
