@@ -190,21 +190,16 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
-      - ${PROJECTHOME}/n9e1/etc:/app/etc
+      - ${PROJECTHOME}/n9e/etc:/app/etc
     environment:
       GIN_MODE: release
       TZ: Asia/Shanghai
       WAIT_HOSTS: timescaledb:5432, redis:6379
     depends_on:
-      - mysql
+      - timescaledb
       - redis
       - prometheus
       - ibex
-    links:
-      - mysql:mysql
-      - redis:redis
-      - prometheus:prometheus
-      - ibex:ibex
     command: >
       sh -c "/wait && /app/n9e server"
 

@@ -76,15 +76,17 @@ export N9E_IBEX_HOST=ibex
 export N9E_IBEX_PORT=${IBEX_PORT}
 export N9E_IBEX_BASICAUTHUSER=${IBEX_BASICAUTHUSER}
 export N9E_IBEX_BASICAUTHPASS=${IBEX_BASICAUTHPASS}
+
 export N9E_REDIS_SERVICE=redis
 export N9E_REDIS_PORT=6379
+
 export N9E_SERVICE=172.0.0.4
 export N9E_HTTP_PORT=19000
 export N9E_DBType=postgres
 export N9E_PGDB_HOST=timescaledb
 export N9E_PGDB_PORT=5432
 export N9E_PGDB_USER=n9e
-export N9E_PGDB_PASSWORD=123456
+export N9E_PGDB_PASSWORD=n9e
 export N9E_PGDB_NAME=n9e
 export N9E_PGDB_SSL_MODE=allow
 # sh  "${WORKHOME}"/build_cmd/n9e.sh
