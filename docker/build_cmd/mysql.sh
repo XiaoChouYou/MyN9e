@@ -17,4 +17,4 @@ then
 fi
 
 
-cp ${PROJECTHOME}/build_cmd/*sql ${PROJECTHOME}/mysql/initsql
+cp ${WORKHOME}/build_cmd/*sql ${PROJECTHOME}/mysql/initsql
