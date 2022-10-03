@@ -7,7 +7,7 @@ then
 fi
 
 
-echo "init .. dnsmasq .. "
+echo "init .. redis .. "
 
 cat  >  "${PROJECTHOME}"/redis/redis.conf   <<EOF
 bind 0.0.0.0

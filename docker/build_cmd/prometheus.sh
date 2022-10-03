@@ -1,5 +1,5 @@
 
-
+echo "init .. prometheus .. "
 docker run -it --rm  --name prometheus-demo  -d prom/prometheus:v2.33.4
 
 
