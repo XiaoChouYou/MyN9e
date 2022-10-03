@@ -131,7 +131,7 @@ services:
 
   mysql:
     platform: linux/x86_64
-    image: "mysql:5.7"
+    image: xiaochouyou/mysql:5.7
     container_name: n9e-mysql
     restart: always
     networks:
@@ -144,7 +144,7 @@ services:
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
       - ${PROJECTHOME}/mysql/data:/var/lib/mysql/
       - ${PROJECTHOME}/mysql/initsql:/docker-entrypoint-initdb.d/
-      - ${PROJECTHOME}/mysql/etc/my.cnf:/etc/my.cnf
+      - ${PROJECTHOME}/mysql/etc:/etc/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     depends_on:
