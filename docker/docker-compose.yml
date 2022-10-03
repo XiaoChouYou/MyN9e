@@ -120,6 +120,8 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
+    depends_on:
+      - dns-server
 
 
 
