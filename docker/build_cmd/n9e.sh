@@ -100,7 +100,7 @@ ScriptPath = "./etc/script/notify.py"
 
 [Alerting.CallPlugin]
 Enable = false
-# use a plugin via `go build -buildmode=plugin -o notify.so`
+# use a plugin via \`go build -buildmode=plugin -o notify.so\`
 PluginPath = "./etc/script/notify.so"
 # The first letter must be capitalized to be exported
 Caller = "N9eCaller"
