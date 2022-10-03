@@ -1,10 +1,6 @@
 # 创建mysql服务相关配置文件
 echo "init .. mysql .. "
 
-if [  ! -d ${PROJECTHOME}/mysql/etc ]
-then
-  mkdir -p ${PROJECTHOME}/mysql/etc
-fi
 
 if [  ! -d ${PROJECTHOME}/mysql/data ]
 then
