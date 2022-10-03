@@ -10,7 +10,6 @@ create database ibex owner  ibex ;
 grant all privileges on database ibex to ibex;
 
 
-
 create user kong with password 'kong';
 create database kong owner  kong ;
 grant all privileges on database kong to kong;
