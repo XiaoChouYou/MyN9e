@@ -29,6 +29,7 @@ docker push new-repo:tagname
 ```
 
 # 提前下载镜像,并提前准备一些docker本地持久化配置文件
+为了便于管理我讲镜像中的程序账号都修改成了1000:1000 
 ```shell
 git clone https://github.com/XiaoChouYou/MyN9e.git
 cd MyN9e
