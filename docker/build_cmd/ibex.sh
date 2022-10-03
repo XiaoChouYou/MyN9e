@@ -1,20 +1,13 @@
 # 创建N9E服务相关配置文件
 echo "init .. ibex server .. "
-docker run -it --rm  --name ibex-demo  -d ulric2019/ibex:0.3
 
-if [  ! -d ${PROJECTHOME}/ibex ]
-then
-  mkdir -p ${PROJECTHOME}/ibex
-fi
 
 if [  ! -d ${PROJECTHOME}/ibex/etc/ ]
 then
-  docker cp ibex-demo:/app/etc/        ${PROJECTHOME}/ibex/etc/
+  mkdir -p ${PROJECTHOME}/ibex/etc/
 fi
 
-chmod -R 777  ${PROJECTHOME}/n9e/etc/
-docker stop ibex-demo
-
+chmod -R 777  ${PROJECTHOME}/ibex/etc/
 
 cat  >  "${PROJECTHOME}"/ibex/etc/server.conf  <<EOF
 # debug, release
