@@ -165,7 +165,7 @@ services:
     restart: always
     networks:
       net_n9e:
-        ipv4_address: ${NSERVER1_SERVICE}
+        ipv4_address: ${NSERVER_SERVICE}
     ports:
       - "19000:19000"
     volumes:
