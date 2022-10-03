@@ -30,6 +30,7 @@ strict-order
 address=/MyDns/${DNS_SERVICE}
 #我的postgres服务器
 address=/timescaledb/${POSTGRES_SERVICE}
+address=/promscale/${PROMSCALE_SERVICE}
 
 EOF
 
