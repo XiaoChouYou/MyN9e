@@ -147,7 +147,7 @@ postgres: host=${N9E_PGDB_HOST} port=${N9E_PGDB_PORT} user=${N9E_PGDB_USER} dbna
 # enable debug mode or not
 Debug = false
 # mysql postgres
-DBType = "${N9E_DB_TYPE}"
+DBType = "${N9E_DBType}"
 # unit: s
 MaxLifetime = 7200
 # max open connections
