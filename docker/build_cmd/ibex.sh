@@ -88,7 +88,7 @@ TablePrefix = ""
 # mysql address host:port
 Address = "${IBEX_MYSQL_HOST}:${IBEX_MYSQL_PORT}"
 # mysql username
-User = "${ibex}"
+User = "${IBEX_MYSQL_USER}"
 # mysql password
 Password = "${IBEX_MYSQL_PASSWORD}"
 # database name
