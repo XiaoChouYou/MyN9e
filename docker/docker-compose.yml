@@ -151,7 +151,6 @@ services:
       - dns-server
 
 
-
   ibex:
     image: ulric2019/ibex:0.3
     container_name: n9e-ibex-server

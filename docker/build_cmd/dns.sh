@@ -33,6 +33,7 @@ address=/timescaledb/${POSTGRES_SERVICE}
 address=/promscale/${PROMSCALE_SERVICE}
 address=/prometheus/${PROMETHEUS_SERVICE}
 address=/redis/${REDIS_SERVICE}
+address=/mysql/${MYSQL_SERVICE}
 address=/ibex/${IBEX_SERVICE}
 
 EOF

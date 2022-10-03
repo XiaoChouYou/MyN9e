@@ -61,13 +61,13 @@ export IBEX_PORT=10090
 export IBEX_BASICAUTHUSER=ibex
 export IBEX_BASICAUTHPASS=ibex
 export IBEX_RPC_PORT=20090
-export IBEX_DBType=postgres
-export IBEX_PGDB_HOST=timescaledb
-export IBEX_PGDB_PORT=5432
-export IBEX_PGDB_USER=ibex
-export IBEX_PGDB_PASSWORD=ibex
-export IBEX_PGDB_NAME=ibex
-export IBEX_PGDB_SSL_MODE=allow
+export IBEX_DBType=mysql
+export IBEX_MYSQL_HOST=timescaledb
+export IBEX_MYSQL_PORT=5432
+export IBEX_MYSQL_USER=ibex
+export IBEX_MYSQL_PASSWORD=ibex
+export IBEX_MYSQL_NAME=ibex
+export IBEX_MYSQL_SSL_MODE=allow
 sh  "${WORKHOME}"/build_cmd/ibex.sh
 
 
