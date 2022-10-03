@@ -1,8 +1,8 @@
-CREATE USER n9e WITH PASSWORD 'n9e';
-GRANT ALL PRIVILEGES ON DATABASE n9e TO n9e;
-GRANT ALL PRIVILEGES ON TABLE n9e.* TO n9e;
+create user N9E_USER_NAME with password 'N9E_DB_PASSWD';
+create database N9E_DB_NAME owner  N9E_USER_NAME ;
+grant all privileges on database N9E_DB_NAME to N9E_USER_NAME;
 
-
+\c n9e;
 
 -- n9e version 5.8 for postgres
 CREATE TABLE users (
