@@ -5,14 +5,9 @@ ARG N9E_USER_NAME=n9e
 ARG N9E_DB_NAME=n9e
 ARG N9E_DB_PASSWD=n9e
 
-RUN (sed -i 's/postgres:x:70:postgres/postgres:x:'${PROC_GID}':postgres/g'  /etc/group )
-RUN (sed -i 's/70:70/'${PROC_UID}':'${PROC_GID}'/g'  /etc/passwd )
-RUN (chown -R postgres:postgres /var/lib/postgresql )
 
+COPY 003_sed_n9e.sh /docker-entrypoint-initdb.d/
 COPY 0022_init_n9e.sql /docker-entrypoint-initdb.d/
-RUN (sed -i 's/N9E_USER_NAME/'${N9E_USER_NAME}'/g'  /docker-entrypoint-initdb.d/0022_init_n9e.sql )
-RUN (sed -i 's/N9E_DB_NAME/'${N9E_DB_NAME}'/g'  /docker-entrypoint-initdb.d/0022_init_n9e.sql )
-RUN (sed -i 's/N9E_DB_PASSWD/'${N9E_DB_PASSWD}'/g'  /docker-entrypoint-initdb.d/0022_init_n9e.sql )
 
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
