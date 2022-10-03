@@ -1,13 +1,13 @@
 FROM timescaledev/promscale-extension:0.6.0-ts2.7.2-pg14
 ARG PROC_GID=1000
 ARG PROC_UID=1000
-ARG N9E_USER_NAME=n9e
-ARG N9E_DB_NAME=n9e
-ARG N9E_DB_PASSWD=n9e
-
 
 COPY 0021_crearte_db.sql /docker-entrypoint-initdb.d/
 COPY 0022_init_n9e.sql /docker-entrypoint-initdb.d/
+
+RUN (sed -i 's/postgres:x:70:postgres/postgres:x:'${PROC_GID}':postgres/g'  /etc/group )
+RUN (sed -i 's/70:70/'${PROC_UID}':'${PROC_GID}'/g'  /etc/passwd )
+RUN (chown -R postgres:postgres /var/lib/postgresql )
 
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
