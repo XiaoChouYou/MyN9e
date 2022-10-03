@@ -108,7 +108,18 @@ services:
       - dns-server
       - timescaledb
 
-
+  redis:
+    image: "redis:6.2"
+    container_name: redis
+    restart: always
+    networks:
+      net_n9e:
+        ipv4_address: ${REDIS_SERVICE}
+    ports:
+      - "6379:6379"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
 
 
 

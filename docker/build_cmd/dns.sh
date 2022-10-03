@@ -32,6 +32,7 @@ address=/MyDns/${DNS_SERVICE}
 address=/timescaledb/${POSTGRES_SERVICE}
 address=/promscale/${PROMSCALE_SERVICE}
 address=/prometheus/${PROMETHEUS_SERVICE}
+address=/redis/${REDIS_SERVICE}
 
 
 EOF

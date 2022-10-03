@@ -42,6 +42,13 @@ export PROMETHEUS_SERVICE=172.0.0.2
 sh  "${WORKHOME}"/build_cmd/prometheus.sh
 
 
+# redis 配置初始化
+export REDIS_SERVICE=172.0.0.3
+
+
+
+
+
 #NGINX配置
 export NGINX_SERVICE=172.0.0.100
 export NGINX_HTTPPORT=10080
