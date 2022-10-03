@@ -42,6 +42,9 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWD}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_DB=${POSTGRES_DB}
+      - N9E_USER_NAME=${N9E_USER_NAME}
+      - N9E_DB_NAME=${N9E_DB_NAME}
+      - N9E_DB_PASSWD=${N9E_DB_PASSWD}
     ports:
       - 5432:5432
       # promscale

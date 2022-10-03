@@ -1,9 +1,9 @@
 FROM timescaledev/promscale-extension:0.6.0-ts2.7.2-pg14
-ENV PROC_GID=1000
-ENV PROC_UID=1000
-ENV N9E_USER_NAME=n9e
-ENV N9E_DB_NAME=n9e
-ENV N9E_DB_PASSWD=n9e
+# ENV PROC_GID=1000
+# ENV PROC_UID=1000
+# ENV N9E_USER_NAME=n9e
+# ENV N9E_DB_NAME=n9e
+# ENV N9E_DB_PASSWD=n9e
 
 RUN (sed -i 's/postgres:x:70:postgres/postgres:x:'${PROC_GID}':postgres/g'  /etc/group )
 RUN (sed -i 's/70:70/'${PROC_UID}':'${PROC_GID}'/g'  /etc/passwd )

@@ -23,6 +23,9 @@ export POSTGRES_SERVICE=172.0.0.2
 export POSTGRES_PASSWD=123123
 export POSTGRES_USER=postgres
 export POSTGRES_DB=postgres
+export N9E_USER_NAME=testn9e
+export N9E_DB_NAME=testn9e
+export N9E_DB_PASSWD=testn9e
 export PROC_GID=1000
 export PROC_UID=1000
 sh  "${WORKHOME}"/build_cmd/timescaledb.sh
