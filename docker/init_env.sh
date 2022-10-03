@@ -94,6 +94,7 @@ sh  "${WORKHOME}"/build_cmd/n9e.sh
 
 
 
+
 #NGINX配置
 export NGINX_SERVICE=172.0.0.100
 export NGINX_HTTPPORT=10080
