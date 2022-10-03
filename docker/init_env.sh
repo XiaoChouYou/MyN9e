@@ -88,7 +88,6 @@ export N9E_MYSQL_PORT=3306
 export N9E_MYSQL_USER=n9e_v5
 export N9E_MYSQL_PASSWORD=n9e_v5
 export N9E_MYSQL_NAME=n9e_v5
-export N9E_MYSQL_SSL_MODE=allow
 sh  "${WORKHOME}"/build_cmd/n9e.sh
 
 
