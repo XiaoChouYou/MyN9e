@@ -129,6 +129,32 @@ services:
       - dns-server
 
 
+  ibex:
+    image: ulric2019/ibex:0.3
+    container_name: n9e-ibex-server
+    hostname: ibex
+    restart: always
+    networks:
+      net_n9e:
+        ipv4_address: ${IBEX_SERVICE}
+    ports:
+      - "10090:10090"
+      - "20090:20090"
+    environment:
+      GIN_MODE: release
+      TZ: Asia/Shanghai
+      WAIT_HOSTS: dns-server:8080,timescaledb:5432
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
+      - ${PROJECTHOME}/ibex/etc:/app/etc
+    mem_limit: 512m
+    depends_on:
+      - dns-server
+      - timescaledb
+    command: >
+      sh -c "/wait && /app/ibex server"
+
 
   n9eserver:
     image: flashcatcloud/nightingale:5.12.1

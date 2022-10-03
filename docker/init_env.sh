@@ -49,15 +49,25 @@ export REDIS_PASSWORD=123456
 sh  "${WORKHOME}"/build_cmd/redis.sh
 
 # Ibex
-
-
+export IBEX_SERVICE=172.0.0.4
+export IBEX_PORT=10090
+export IBEX_BASICAUTHUSER=ibex
+export IBEX_BASICAUTHPASS=ibex
+export IBEX_RPC_PORT=20090
+export IBEX_DBType=postgres
+export IBEX_PGDB_HOST=timescaledb
+export IBEX_PGDB_PORT=5432
+export IBEX_PGDB_USER=ibex
+export IBEX_PGDB_PASSWORD=123456
+export IBEX_PGDB_NAME=ibex
+export IBEX_PGDB_SSL_MODE=allow
 
 
 # n9e server初始化
 export N9E_IBEX_HOST=ibex
-export N9E_IBEX_PORT=10090
-export N9E_IBEX_BASICAUTHUSER=ibex
-export N9E_IBEX_BASICAUTHPASS=ibex
+export N9E_IBEX_PORT=${IBEX_PORT}
+export N9E_IBEX_BASICAUTHUSER=${IBEX_BASICAUTHUSER}
+export N9E_IBEX_BASICAUTHPASS=${IBEX_BASICAUTHPASS}
 export N9E_REDIS_SERVICE=redis
 export N9E_REDIS_PORT=6379
 export N9E_SERVICE=172.0.0.4
