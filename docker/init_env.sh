@@ -38,6 +38,7 @@ export PROMSCALE_DB_PASSWORD=${POSTGRES_PASSWD}
 
 
 # prometheus 配置初始化
+export PROMETHEUS_SERVICE=172.0.0.4
 sh  "${WORKHOME}"/build_cmd/prometheus.sh
 
 
