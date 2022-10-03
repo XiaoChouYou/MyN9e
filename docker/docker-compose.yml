@@ -180,7 +180,7 @@ services:
 
   n9eserver:
     image: flashcatcloud/nightingale:5.12.1
-    container_name: n9e-nserver
+    container_name: n9e-n9eserver
     restart: always
     networks:
       net_n9e:
@@ -206,7 +206,7 @@ services:
 
   n9ewebapi:
     image: flashcatcloud/nightingale:5.12.1
-    container_name: n9e-nserver
+    container_name: n9e-n9ewebapi
     restart: always
     networks:
       net_n9e:
