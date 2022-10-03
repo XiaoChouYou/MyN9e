@@ -60,7 +60,7 @@ export IBEX_DBType=postgres
 export IBEX_PGDB_HOST=timescaledb
 export IBEX_PGDB_PORT=5432
 export IBEX_PGDB_USER=ibex
-export IBEX_PGDB_PASSWORD=123456
+export IBEX_PGDB_PASSWORD=ibex
 export IBEX_PGDB_NAME=ibex
 export IBEX_PGDB_SSL_MODE=allow
 sh  "${WORKHOME}"/build_cmd/ibex.sh
