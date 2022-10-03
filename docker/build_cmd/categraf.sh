@@ -24,7 +24,7 @@ print_configs = false
 # "$hostname" -> auto detect hostname
 # "$ip" -> auto detect ip
 # "$hostname-$ip" -> auto detect hostname and ip to replace the vars
-hostname = "\$HOSTNAME"
+hostname = "$ip"
 
 # will not add label(agent_hostname) if true
 omit_hostname = false
