@@ -16,7 +16,7 @@ fi
 docker run -it --rm  --name mysql-demo  -d xiaochouyou/mysql:5.7
 if [  ! -d ${PROJECTHOME}/mysql/etc/ ]
 then
-  docker cp prometheus-demo:/etc/mysql        ${PROJECTHOME}/mysql/etc
+  docker cp mysql-demo:/etc/mysql     ${PROJECTHOME}/mysql/etc
 fi
 chmod -R 777  ${PROJECTHOME}/mysql/etc/
 docker stop mysql-demo
