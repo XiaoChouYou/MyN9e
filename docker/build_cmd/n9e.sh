@@ -142,13 +142,7 @@ Password = "${REDIS_PASSWORD}"
 
 [DB]
 # postgres: host=%s port=%s user=%s dbname=%s password=%s sslmode=%s
-# DSN="root:1234@tcp(mysql:3306)/n9e_v5?charset=utf8mb4&parseTime=True&loc=Local&allowNativePasswords=true"
-host="${N9E_PGDB_HOST}"
-port="${N9E_PGDB_PORT}"
-user="${N9E_PGDB_USER}"
-dbname="${N9E_PGDB_NAME}"
-password="${N9E_PGDB_PASSWORD}"
-sslmode="${N9E_PGDB_SSL_MODE}"
+DSN="${N9E_MYSQL_USER}:${N9E_MYSQL_PASSWORD}@tcp(${N9E_MYSQL_HOST}:${N9E_MYSQL_PORT})/${N9E_MYSQL_NAME}?charset=utf8mb4&parseTime=True&loc=Local&allowNativePasswords=true"
 # enable debug mode or not false
 Debug = true
 # mysql postgres
