@@ -147,6 +147,8 @@ services:
       - ${PROJECTHOME}/mysql/etc/my.cnf:/etc/my.cnf
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      - dns-server
 
 
 
