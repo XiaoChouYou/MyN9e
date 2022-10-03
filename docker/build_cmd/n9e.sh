@@ -1,9 +1,9 @@
 # 创建N9E服务相关配置文件
 echo "init .. n9e server .. "
 
-if [  ! -d ${PROJECTHOME}/n9e ]
+if [  ! -d ${PROJECTHOME}/n9e/etc/ ]
 then
-  mkdir -p ${PROJECTHOME}/n9e
+  mkdir -p ${PROJECTHOME}/n9e/etc/
 fi
 
 
