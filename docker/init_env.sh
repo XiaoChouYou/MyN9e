@@ -20,9 +20,9 @@ sh  "${WORKHOME}"/build_cmd/dns.sh
 
 # timescaledb数据库
 export POSTGRES_SERVICE=172.0.0.2
-export POSTGRES_PASSWD=postgres
-export POSTGRES_USER=postgres
-export POSTGRES_DB=postgres
+export POSTGRES_PASSWD=promscale
+export POSTGRES_USER=promscale
+export POSTGRES_DB=promscale
 export PROC_GID=1000
 export PROC_UID=1000
 sh  "${WORKHOME}"/build_cmd/timescaledb.sh
@@ -33,9 +33,9 @@ export PROMSCALE_SERVICE=172.0.0.2
 export PROMSCALE_DB_HOST=POSTGRES_SERVICE
 export PROMSCALE_DB_PORT=5432
 export PROMSCALE_DB_SSL_MODE=allow
-export PROMSCALE_DB_NAME=promscale
-export PROMSCALE_DB_USER=promscale
-export PROMSCALE_DB_PASSWORD=promscale
+export PROMSCALE_DB_NAME=${POSTGRES_DB}
+export PROMSCALE_DB_USER=${POSTGRES_USER}
+export PROMSCALE_DB_PASSWORD=${POSTGRES_PASSWD}
 
 
 
