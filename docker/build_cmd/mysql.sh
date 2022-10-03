@@ -1,4 +1,4 @@
-# 创建N9E服务相关配置文件
+# 创建mysql服务相关配置文件
 echo "init .. mysql .. "
 
 if [  ! -d ${PROJECTHOME}/mysql/etc ]
