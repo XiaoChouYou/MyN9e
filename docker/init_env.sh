@@ -44,7 +44,9 @@ sh  "${WORKHOME}"/build_cmd/prometheus.sh
 
 # redis 配置初始化
 export REDIS_SERVICE=172.0.0.3
-
+export REDIS_PORT=6379
+export REDIS_PASSWORD=123456
+sh  "${WORKHOME}"/build_cmd/redis.sh
 
 
 

@@ -1,0 +1,27 @@
+
+# 创建DNS服务相关配置文件
+mkdir -p "${PROJECTHOME}"/redis
+if [ -f "${PROJECTHOME}"/redis/redis.conf ]
+then
+   rm  "${PROJECTHOME}"/redis/redis.conf
+fi
+
+
+echo "init .. dnsmasq .. "
+
+cat  >  "${PROJECTHOME}"/redis/redis.conf   <<EOF
+bind 0.0.0.0
+protected-mode no
+port ${REDIS_PORT}
+timeout 0
+save 900 1 # 900s内至少一次写操作则执行bgsave进行RDB持久化
+save 300 10
+save 60 10000
+rdbcompression yes
+dbfilename dump.rdb
+dir /data
+appendonly yes
+appendfsync everysec
+requirepass ${REDIS_PASSWORD}
+
+EOF
