@@ -121,6 +121,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
       - ${PROJECTHOME}/redis/data:/data:rw
+      - ${PROJECTHOME}/redis/redis.conf:/data/redis.conf:rw
     command:
       - 'redis-server'
       - '/data/redis.conf'
