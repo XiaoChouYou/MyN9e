@@ -35,6 +35,9 @@ address=/prometheus/${PROMETHEUS_SERVICE}
 address=/redis/${REDIS_SERVICE}
 address=/mysql/${MYSQL_SERVICE}
 address=/ibex/${IBEX_SERVICE}
+address=/nserver/${N9E_SERV_SERVICE}
+address=/nwebapi/${N9E_WEB_SERVICE}
+
 
 EOF
 
