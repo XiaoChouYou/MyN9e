@@ -129,6 +129,26 @@ services:
     depends_on:
       - dns-server
 
+  mysql:
+    platform: linux/x86_64
+    image: "mysql:5.7"
+    container_name: n9e-mysql
+    restart: always
+    networks:
+      net_n9e:
+        ipv4_address: ${MYSQL_SERVICE}
+    ports:
+      - "3306:3306"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
+      - ${PROJECTHOME}/mysql/data:/var/lib/mysql/
+      - ${PROJECTHOME}/mysql/initsql:/docker-entrypoint-initdb.d/
+      - ${PROJECTHOME}/mysql/etc/my.cnf:/etc/my.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+
 
   ibex:
     image: ulric2019/ibex:0.3
