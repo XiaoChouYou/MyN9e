@@ -1,20 +1,13 @@
 # 创建N9E服务相关配置文件
 echo "init .. n9e server .. "
-docker run -it --rm  --name nserver-demo  -d flashcatcloud/nightingale:5.12.1
 
 if [  ! -d ${PROJECTHOME}/n9e ]
 then
   mkdir -p ${PROJECTHOME}/n9e
 fi
 
-if [  ! -d ${PROJECTHOME}/n9e/etc/ ]
-then
-  docker cp nserver-demo:/app/etc/        ${PROJECTHOME}/n9e/etc/
-fi
 
 chmod -R 777  ${PROJECTHOME}/n9e/etc/
-docker stop nserver-demo
-
 
 cat  >  "${PROJECTHOME}"/n9e/etc/server.conf  <<EOF
 # debug, release
