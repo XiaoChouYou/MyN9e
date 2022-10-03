@@ -56,7 +56,7 @@ sh  "${WORKHOME}"/build_cmd/mysql.sh
 
 
 # Ibex
-export IBEX_SERVICE=172.0.0.4
+export IBEX_SERVICE=172.0.0.5
 export IBEX_PORT=10090
 export IBEX_BASICAUTHUSER=ibex
 export IBEX_BASICAUTHPASS=ibex
