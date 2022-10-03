@@ -23,5 +23,5 @@ dir /data
 appendonly yes
 appendfsync everysec
 requirepass ${REDIS_PASSWORD}
-
+masterauth  ${REDIS_PASSWORD}
 EOF
