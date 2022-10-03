@@ -38,17 +38,21 @@ export PROMSCALE_DB_USER=promscale
 export PROMSCALE_DB_PASSWORD=promscale
 
 
-
 # prometheus 配置初始化
 export PROMETHEUS_SERVICE=172.0.0.2
 sh  "${WORKHOME}"/build_cmd/prometheus.sh
-
 
 # redis 配置初始化
 export REDIS_SERVICE=172.0.0.3
 export REDIS_PORT=6379
 export REDIS_PASSWORD=123456
 sh  "${WORKHOME}"/build_cmd/redis.sh
+
+# mysql 配置初始化
+export MYSQL_SERVICE=172.0.0.4
+export MYSQL_ROOT_PASSWORD=mysql
+
+
 
 # Ibex
 export IBEX_SERVICE=172.0.0.4
