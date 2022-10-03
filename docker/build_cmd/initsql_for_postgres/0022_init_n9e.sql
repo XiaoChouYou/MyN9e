@@ -1,5 +1,5 @@
 
-\c N9E_DB_NAME;
+\c n9e;
 
 -- n9e version 5.8 for postgres
 CREATE TABLE users (
