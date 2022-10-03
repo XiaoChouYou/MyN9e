@@ -11,4 +11,4 @@ RUN (chown -R postgres:postgres /var/lib/postgresql )
 
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-CMD ["promscale"]
+CMD ["postgres"]

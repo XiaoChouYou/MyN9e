@@ -25,9 +25,6 @@ export POSTGRES_USER=promscale
 export POSTGRES_DB=promscale
 export PROC_GID=1000
 export PROC_UID=1000
-export PROMSCALE_PASSWD=promscale
-export PROMSCALE_USER=promscale
-export PROMSCALE_DB=promscale
 sh  "${WORKHOME}"/build_cmd/timescaledb.sh
 
 
