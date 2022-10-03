@@ -71,7 +71,7 @@ export IBEX_MYSQL_SSL_MODE=allow
 sh  "${WORKHOME}"/build_cmd/ibex.sh
 
 
-# n9e server初始化
+# n9e server初始化 web初始化
 export N9E_IBEX_HOST=ibex
 export N9E_IBEX_PORT=${IBEX_PORT}
 export N9E_IBEX_BASICAUTHUSER=${IBEX_BASICAUTHUSER}
@@ -95,6 +95,9 @@ sh  "${WORKHOME}"/build_cmd/n9e.sh
 
 
 
+# categraf 初始化
+export CATEGRAF_SERVICE=172.0.0.8
+sh  "${WORKHOME}"/build_cmd/categraf.sh
 
 
 #NGINX配置

@@ -230,6 +230,28 @@ services:
       sh -c "/wait && /app/n9e webapi"
 
 
+  categraf:
+    image: flashcatcloud/categraf:v0.2.14
+    container_name: n9e-categraf
+    restart: always
+    networks:
+      net_n9e:
+        ipv4_address: ${CATEGRAF_SERVICE}
+    environment:
+      TZ: Asia/Shanghai
+      HOST_PROC: /hostfs/proc
+      HOST_SYS: /hostfs/sys
+      HOST_MOUNT_PREFIX: /hostfs
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
+      - ${PROJECTHOME}/categraf/conf:/etc/categraf/conf
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /:/hostfs
+    ports:
+      - "9100:9100/tcp"
+    depends_on:
+      - n9eserver
 
 
 #  nginx:
