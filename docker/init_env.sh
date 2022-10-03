@@ -61,6 +61,7 @@ export IBEX_PGDB_USER=ibex
 export IBEX_PGDB_PASSWORD=123456
 export IBEX_PGDB_NAME=ibex
 export IBEX_PGDB_SSL_MODE=allow
+sh  "${WORKHOME}"/build_cmd/ibex.sh
 
 
 # n9e server初始化
