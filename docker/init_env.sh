@@ -29,7 +29,7 @@ sh  "${WORKHOME}"/build_cmd/timescaledb.sh
 
 
 # PROMSCALE 数据库
-export PROMSCALE_SERVICE=172.0.0.3
+export PROMSCALE_SERVICE=172.0.0.2
 export PROMSCALE_DB_HOST=${POSTGRES_SERVICE}
 export PROMSCALE_DB_PORT=5432
 export PROMSCALE_DB_SSL_MODE=allow
@@ -38,7 +38,7 @@ export PROMSCALE_DB_PASSWORD=${POSTGRES_PASSWD}
 
 
 # prometheus 配置初始化
-export PROMETHEUS_SERVICE=172.0.0.4
+export PROMETHEUS_SERVICE=172.0.0.2
 sh  "${WORKHOME}"/build_cmd/prometheus.sh
 
 

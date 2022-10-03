@@ -44,6 +44,11 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
     ports:
       - 5432:5432
+      # promscale
+      - 9201:9201
+      - 9202:9202
+      # prometheus
+      - 9090:9090
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
@@ -57,9 +62,7 @@ services:
     image: timescale/promscale:0.14
     container_name: n9e-promscale
     restart: always
-    networks:
-      net_n9e:
-        ipv4_address: ${PROMSCALE_SERVICE}
+    network_mode: container:n9e-timescaledb
     environment:
       - PROMSCALE_DB_HOST=${PROMSCALE_DB_HOST}
       - PROMSCALE_DB_PORT=${PROMSCALE_DB_PORT}
@@ -67,9 +70,6 @@ services:
       - PROMSCALE_DB_NAME=${PROMSCALE_DB_NAME}
       - PROMSCALE_DB_PASSWORD=${PROMSCALE_DB_PASSWORD}
       - WAIT_HOSTS=dns-server:8080,timescaledb:5432
-    ports:
-      - 9201:9201
-      - 9202:9202
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
@@ -83,13 +83,9 @@ services:
     image: xiaochouyou/prometheus:v2.33.4
     container_name: n9e-prometheus
     restart: always
-    networks:
-      net_n9e:
-        ipv4_address: ${PROMETHEUS_SERVICE}
-    ports:
-      - 9090:9090
-      - 9093:9093
-      - 9100:9100
+    network_mode: container:n9e-timescaledb
+    environment:
+      - WAIT_HOSTS=dns-server:8080,promscale:9201
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
@@ -109,6 +105,8 @@ services:
     stop_grace_period: 10s
     depends_on:
       - promscale
+      - dns-server
+      - timescaledb
 
 
 
