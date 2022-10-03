@@ -110,7 +110,7 @@ services:
 
   redis:
     image: "redis:6.2"
-    container_name: redis
+    container_name: n9e-redis
     restart: always
     networks:
       net_n9e:
