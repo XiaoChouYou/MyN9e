@@ -3,7 +3,7 @@
 
 [[instances]]
 address = "172.0.0.3:6379"
-labels = { instance="redis_c_0",ident="redis_c_0" }
+labels = { redisname="redis_c_0" }
 password = "123456"
 
 # address = "127.0.0.1:6379"
