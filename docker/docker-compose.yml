@@ -173,7 +173,7 @@ services:
     mem_limit: 512m
     depends_on:
       - dns-server
-      - timescaledb
+      - mysql
     command: >
       sh -c "/wait && /app/ibex server"
 
