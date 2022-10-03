@@ -1,6 +1,6 @@
 
 echo "init .. prometheus .. "
-docker run -it --rm  --name prometheus-demo  -d prom/prometheus:v2.33.4
+docker run -it --rm  -e MYSQL_ROOT_PASSWORD=1234  --name prometheus-demo  -d prom/prometheus:v2.33.4
 
 
 if [  ! -d ${PROJECTHOME}/prometheus ]
