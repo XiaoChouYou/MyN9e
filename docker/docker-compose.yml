@@ -191,6 +191,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
       - ${PROJECTHOME}/n9e/etc:/app/etc
+    mem_limit: 512m
     environment:
       GIN_MODE: release
       TZ: Asia/Shanghai
@@ -217,6 +218,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
       - ${PROJECTHOME}/n9e/etc:/app/etc
+    mem_limit: 512m
     environment:
       GIN_MODE: release
       TZ: Asia/Shanghai
@@ -231,12 +233,13 @@ services:
 
 
   categraf:
-    image: flashcatcloud/categraf:v0.2.14
+    image: flashcatcloud/categraf:v0.2.13
     container_name: n9e-categraf
     restart: always
     networks:
       net_n9e:
         ipv4_address: ${CATEGRAF_SERVICE}
+    mem_limit: 512m
     environment:
       TZ: Asia/Shanghai
       HOST_PROC: /hostfs/proc
