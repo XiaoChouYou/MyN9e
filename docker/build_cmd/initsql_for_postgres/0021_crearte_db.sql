@@ -1,3 +1,6 @@
+create user promscale with password 'promscale';
+create database promscale owner  promscale ;
+grant all privileges on database n9e to promscale;
 
 
 create user n9e with password 'n9e';
