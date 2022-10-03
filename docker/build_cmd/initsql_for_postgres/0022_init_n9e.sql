@@ -2,7 +2,7 @@ create user N9E_USER_NAME with password 'N9E_DB_PASSWD';
 create database N9E_DB_NAME owner  N9E_USER_NAME ;
 grant all privileges on database N9E_DB_NAME to N9E_USER_NAME;
 
-\c n9e;
+\c N9E_DB_NAME;
 
 -- n9e version 5.8 for postgres
 CREATE TABLE users (
