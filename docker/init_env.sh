@@ -100,6 +100,10 @@ export CATEGRAF_SERVICE=172.0.0.8
 sh  "${WORKHOME}"/build_cmd/categraf.sh
 
 
+# drawio 初始化
+export DRAWIO_SERVICE=172.0.0.9
+sh "${WORKHOME}"/build_cmd/drawio.sh
+
 #NGINX配置
 export NGINX_SERVICE=172.0.0.100
 export NGINX_HTTPPORT=10080

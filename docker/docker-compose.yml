@@ -257,6 +257,21 @@ services:
       - n9eserver
 
 
+  draw:
+    image: jgraph/drawio:20.4.0
+    container_name: n9e-drawio
+    restart: always
+    networks:
+      net_n9e:
+        ipv4_address: ${DRAWIO_SERVICE}
+    mem_limit: 512m
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
+      - ${PROJECTHOME}/drawio/tomcat:/usr/local/tomcat
+    depends_on:
+      - dns-server
+
 #  nginx:
 #    container_name: n9e-nginx
 #    image: nginx
