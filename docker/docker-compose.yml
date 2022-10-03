@@ -54,7 +54,7 @@ services:
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
       - ${PROJECTHOME}/timescaledb/data:/var/lib/postgresql/data:rw
     command:
-      - 'promscale'
+      - "${PROMSCALE_DB_USER}"
     mem_limit: 512m
     depends_on:
       - dns-server
