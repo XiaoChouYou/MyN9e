@@ -5,7 +5,7 @@ ENV PROC_GID  1000
 USER root
 
 RUN (chmod -R 777 /etc/prometheus /usr/share/prometheus /prometheus )
-RUN (sed -i 's/65535:65535/'${PROC_UID}':'${PROC_GID}'/g'  /etc/passwd )
+RUN (sed -i 's/65534:65534/'${PROC_UID}':'${PROC_GID}'/g'  /etc/passwd )
 
 USER nobody
 ENTRYPOINT ["/bin/prometheus"]
