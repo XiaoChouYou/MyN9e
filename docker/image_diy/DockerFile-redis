@@ -1,0 +1,13 @@
+FROM redis:6.2
+# 创建程序账号
+ENV PROC_UID  1000
+ENV PROC_GID  1000
+USER root
+
+RUN (chmod -R 777 /data  )
+RUN (sed -i 's/999:999/'${PROC_UID}':'${PROC_GID}'/g'  /etc/passwd )
+
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["redis-server"]
+

@@ -109,7 +109,7 @@ services:
       - timescaledb
 
   redis:
-    image: "redis:6.2"
+    image: xiaochouyou/redis:6.2
     container_name: n9e-redis
     restart: always
     networks:
