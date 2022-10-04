@@ -245,14 +245,14 @@ services:
       HOST_PROC: /hostfs/proc
       HOST_SYS: /hostfs/sys
       HOST_MOUNT_PREFIX: /hostfs
+    ports:
+      - "9100:9100/tcp"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
       - ${PROJECTHOME}/categraf/conf:/etc/categraf/conf
       - /var/run/docker.sock:/var/run/docker.sock
       - /:/hostfs
-    ports:
-      - "9100:9100/tcp"
     depends_on:
       - n9eserver
 
@@ -265,6 +265,8 @@ services:
       net_n9e:
         ipv4_address: ${DRAWIO_SERVICE}
     mem_limit: 512m
+    ports:
+      - 8081:8080
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
