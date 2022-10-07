@@ -16,7 +16,7 @@ services:
     restart: always
     networks:
       net_n9e:
-        ipv4_address: ${DNSSERVICE}
+        ipv4_address: ${DNS_SERVICE}
     environment:
       - TZ=Asia/Shanghai
       - HTTP_USER=${DNS_USER}
