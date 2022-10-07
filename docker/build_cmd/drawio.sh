@@ -17,6 +17,5 @@ then
   docker cp drawio-demo:/usr/local/tomcat/webapps/        ${PROJECTHOME}/drawio/webapps/
 fi
 
-chmod -R 777  ${PROJECTHOME}/drawio/
 docker stop drawio-demo
 
