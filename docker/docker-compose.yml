@@ -276,7 +276,7 @@ services:
 
 
   grafana9:
-    image: grafana/grafana:9.1.7
+    image: xiaochouyou/grafana:9.1.7
     container_name: n9e-grafana-9
     networks:
       net_n9e:
@@ -293,7 +293,7 @@ services:
       - dns-server
 
   grafana8:
-    image: grafana/grafana:8.5.13
+    image: xiaochouyou/grafana:8.5.13
     container_name: n9e-grafana-8
     networks:
       net_n9e:
