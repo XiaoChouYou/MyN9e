@@ -17,7 +17,6 @@ then
   docker cp grafana9-demo:/var/lib/grafana/        ${PROJECTHOME}/grafana9/lib/
 fi
 
-chmod -R 777  ${PROJECTHOME}/grafana9/
 docker stop grafana9-demo
 
 
@@ -39,5 +38,4 @@ then
   docker cp grafana8-demo:/var/lib/grafana/        ${PROJECTHOME}/grafana8/lib/
 fi
 
-chmod -R 777  ${PROJECTHOME}/grafana8/
 docker stop grafana8-demo
