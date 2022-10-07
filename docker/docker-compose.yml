@@ -270,7 +270,8 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
-      - ${PROJECTHOME}/drawio/tomcat:/usr/local/tomcat
+      - ${PROJECTHOME}/drawio/conf:/usr/local/tomcat/conf
+      - ${PROJECTHOME}/drawio/webapps:/usr/local/tomcat/webapps
     depends_on:
       - dns-server
 
