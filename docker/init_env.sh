@@ -112,8 +112,8 @@ sh "${WORKHOME}"/build_cmd/grafana.sh
 
 #NGINX配置
 export NGINX_SERVICE=172.0.0.100
-export NGINX_HTTPPORT=10080
-export NGINX_HTTPsPORT=10443
+export NGINX_HTTPPORT=20080
+export NGINX_HTTPsPORT=20443
 sh  "${WORKHOME}"/build_cmd/nginx.sh
 
 
