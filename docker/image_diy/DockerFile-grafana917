@@ -12,5 +12,7 @@ RUN (grafana-cli plugins install agenty-flowcharting-panel)
 RUN (grafana-cli plugins install bilibala-echarts-panel)
 RUN (grafana-cli plugins install volkovlabs-echarts-panel)
 RUN (grafana-cli plugins install grafana-clock-panel)
+RUN (grafana-cli plugins install grafana-singlestat-panel)
+RUN (grafana-cli plugins install volkovlabs-image-panel)
 ENTRYPOINT ["/run.sh"]
 CMD ["/bin/sh"]
