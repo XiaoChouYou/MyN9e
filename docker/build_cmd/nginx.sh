@@ -21,8 +21,8 @@ docker stop nginx-demo
 
 cat > ${PROJECTHOME}/nginx/etc/conf.d/default.conf <<EOF
 server {
-    listen       10080;
-    listen  [::]:10080;
+    listen       ${NGINX_HTTPPORT};
+    listen  [::]:${NGINX_HTTPPORT};
     server_name  localhost;
 
     #access_log  /var/log/nginx/host.access.log  main;

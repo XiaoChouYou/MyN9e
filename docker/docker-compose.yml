@@ -321,7 +321,7 @@ services:
     environment:
       - NGINX_PORT=6080
     ports:
-      - 6080:6080
+      - ${NGINX_HTTPPORT}:${NGINX_HTTPPORT}
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
