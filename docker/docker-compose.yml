@@ -258,7 +258,7 @@ services:
 
 
   draw:
-    image: jgraph/drawio:20.4.0
+    image: xiaochouyou/drawio:20.4.0
     container_name: n9e-drawio
     restart: always
     networks:

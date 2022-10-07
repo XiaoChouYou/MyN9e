@@ -1,0 +1,12 @@
+FROM jgraph/drawio:20.4.0
+
+ENV PROC_UID  1000
+ENV PROC_GID  1000
+
+RUN (groupadd -g ${PROC_GID}  userapp ; useradd  -g ${PROC_GID}  -u ${PROC_UID}  -s /bin/bash -m -d /home/userapp  userapp)
+RUN (chown -R userapp:userapp /usr/local/tomcat )
+
+USER userapp
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["catalina.sh" ,"run"]
+
