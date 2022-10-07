@@ -317,7 +317,7 @@ services:
     restart: always
     networks:
       net_n9e:
-        ipv4_address: ${NGINXSERVICE}
+        ipv4_address: ${NGINX_SERVICE}
     environment:
       - NGINX_PORT=10080
     ports:
