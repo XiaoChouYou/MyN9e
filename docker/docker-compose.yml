@@ -274,6 +274,42 @@ services:
     depends_on:
       - dns-server
 
+
+  grafana9:
+    image: grafana/grafana:9.1.7
+    container_name: n9e-grafana-9
+    networks:
+      net_n9e:
+        ipv4_address: ${GRAFANA_9_SERVICE}
+    ports:
+      - 3009:3000
+    mem_limit: 512m
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
+      - ${PROJECTHOME}/grafana9/etc:/etc/grafana
+      - ${PROJECTHOME}/grafana9/lib:/var/lib/grafana
+    depends_on:
+      - dns-server
+
+  grafana8:
+    image: grafana/grafana:8.5.13
+    container_name: n9e-grafana-8
+    networks:
+      net_n9e:
+        ipv4_address: ${GRAFANA_8_SERVICE}
+    ports:
+      - 3008:3000
+    mem_limit: 512m
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
+      - ${PROJECTHOME}/grafana8/etc:/etc/grafana
+      - ${PROJECTHOME}/grafana8/lib:/var/lib/grafana
+    depends_on:
+      - dns-server
+
+
 #  nginx:
 #    container_name: n9e-nginx
 #    image: nginx
