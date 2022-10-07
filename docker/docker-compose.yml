@@ -313,7 +313,7 @@ services:
 
   nginx:
     container_name: n9e-nginx
-    image: nginx
+    image: nginx:1.23.1-alpine
     restart: always
     networks:
       net_n9e:
