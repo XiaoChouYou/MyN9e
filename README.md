@@ -25,19 +25,26 @@ docker-compose up -d
 如有需要可自行修改相关的DockerFile构造适用个人的镜像
 
 
-# 数据库 使用的postgres的扩展时序数据库 
+##  举例
+数据库 使用的postgres的扩展时序数据库 timescale 
 因为容器内的目录挂载到本地后用户权限不一致. 持久化目录配置文件改动不方便. 
 增加修改目录用户ID与组ID,尽量保证与容器外用户一致 
 ```dockerfile
 FROM timescaledev/promscale-extension:0.6.0-ts2.7.2-pg14
-ENV PROC_GID=5000
-ENV PROC_UID=5000
+ARG PROC_GID=1000
+ARG PROC_UID=1000
+
+COPY 0021_crearte_db.sql /docker-entrypoint-initdb.d/
+COPY 0022_init_n9e.sql /docker-entrypoint-initdb.d/
+
 RUN (sed -i 's/postgres:x:70:postgres/postgres:x:'${PROC_GID}':postgres/g'  /etc/group )
 RUN (sed -i 's/70:70/'${PROC_UID}':'${PROC_GID}'/g'  /etc/passwd )
 RUN (chown -R postgres:postgres /var/lib/postgresql )
 
+
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["postgres"]
+
 ```
 
 # docker hub 登录
