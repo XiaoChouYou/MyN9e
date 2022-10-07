@@ -44,24 +44,18 @@ RUN (chown -R postgres:postgres /var/lib/postgresql )
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["postgres"]
-
 ```
-
-# docker hub 登录
+## docker hub 登录
+构造了自己的镜像之后可以上传到镜像仓库以便日后使用
 ```shell
 docker login
 docker push new-repo:tagname
 ```
 
-# 提前下载镜像,并提前准备一些docker本地持久化配置文件
-为了便于管理我讲镜像中的程序账号都修改成了1000:1000 
-```shell
-git clone https://github.com/XiaoChouYou/MyN9e.git
-cd MyN9e
-. ./init_env.sh
-docker-compose up -d
-```
-
+* 特别说明
+* n9e默认提供的是mysql的数据库.可以集成到一个postgres库中.但是要修改大量的表结构与初始化语句.如果需要可以自行修改
+* nginx服务可以替换成kong 与 konga 做为网关.所以提前在pg库中创建了对应空库.后续可以自行取舍
+* drawio存在的意义是结合grafana生成flowcharing.如果感兴趣可以自行学习[bilibili学习视频](https://www.bilibili.com/video/BV1wf4y1m7vm)
 
 # 其他工具命令等
 ## 查看DockerFile
@@ -69,3 +63,9 @@ docker-compose up -d
 alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpine/dfimage"
 dfimage -sV=1.36 timescale/promscale
 ```
+
+## nginx 鉴权密码
+```shell
+docker run --rm -ti xmartlabs/htpasswd userapp 123456
+```
+
