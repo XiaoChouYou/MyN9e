@@ -7,7 +7,10 @@
 
 # 快速开始
 ```shell
-
+git clone https://github.com/XiaoChouYou/MyN9e.git
+cd MyN9e/docker
+. ./init_env.sh
+docker-compose up -d
 ```
 
 
