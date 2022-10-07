@@ -1,11 +1,15 @@
 # 我的N9E项目测试
 自己学习并搭建的N9E测试项目
 
-# 查看DockerFile
+整个集群架构包括
+
+
+
+# 快速开始
 ```shell
-alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpine/dfimage"
-dfimage -sV=1.36 timescale/promscale
+
 ```
+
 
 # 数据库 使用的postgres的扩展时序数据库 
 因为容器内的目录挂载到本地后用户权限不一致. 持久化目录配置文件改动不方便. 
@@ -35,4 +39,12 @@ git clone https://github.com/XiaoChouYou/MyN9e.git
 cd MyN9e
 . ./init_env.sh
 docker-compose up -d
+```
+
+
+# 其他工具命令等
+## 查看DockerFile
+```shell
+alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpine/dfimage"
+dfimage -sV=1.36 timescale/promscale
 ```
