@@ -104,6 +104,12 @@ sh  "${WORKHOME}"/build_cmd/categraf.sh
 export DRAWIO_SERVICE=172.0.0.9
 sh "${WORKHOME}"/build_cmd/drawio.sh
 
+
+# grafana9 初始化
+export GRAFANA_9_SERVICE=172.0.0.10
+export GRAFANA_8_SERVICE=172.0.0.11
+sh "${WORKHOME}"/build_cmd/grafana.sh
+
 #NGINX配置
 export NGINX_SERVICE=172.0.0.100
 export NGINX_HTTPPORT=10080
