@@ -319,9 +319,9 @@ services:
       net_n9e:
         ipv4_address: ${NGINX_SERVICE}
     environment:
-      - NGINX_PORT=10080
+      - NGINX_PORT=6080
     ports:
-      - 10080:10080
+      - 6080:6080
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PROJECTHOME}/dns/resolv.conf:/etc/resolv.conf:ro
