@@ -12,11 +12,7 @@ fi
 export SUBNETWORK=172.0.0.0/24
 
 
-# DNS服务器IP
-export DNS_SERVICE=172.0.0.250
-export DNS_USER=admin
-export DNS_PASSWD=123123
-sh  "${WORKHOME}"/build_cmd/dns.sh
+
 
 # timescaledb数据库
 export POSTGRES_SERVICE=172.0.0.2
@@ -117,3 +113,9 @@ export NGINX_HTTPsPORT=20443
 sh  "${WORKHOME}"/build_cmd/nginx.sh
 
 
+
+# DNS服务器IP
+export DNS_SERVICE=172.0.0.250
+export DNS_USER=admin
+export DNS_PASSWD=123123
+sh  "${WORKHOME}"/build_cmd/dns.sh
