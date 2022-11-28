@@ -3,7 +3,7 @@
 
 整个集群架构包括
 
-![结构图](/resource/%E7%BB%84%E4%BB%B6%E7%BB%93%E6%9E%84%E5%9B%BE.png)
+![结构图](https://github.com/XiaoChouYou/MyN9e/blob/main/resource/%E7%BB%84%E4%BB%B6%E7%BB%93%E6%9E%84%E5%9B%BE.png)
 
 # 快速开始
 ```shell
